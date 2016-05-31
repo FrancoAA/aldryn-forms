@@ -49,7 +49,7 @@ class ExistingEmailNotificationInline(admin.StackedInline):
             )
         }),
         ('Recipients', {
-            # 'classes': ('collapse',),
+            'classes': ('collapse',),
             'fields': (
                 'text_variables',
                 'to_user',
@@ -90,7 +90,7 @@ class ExistingEmailNotificationInline(admin.StackedInline):
             # to be sent in html version.
             fields.append('body_html')
         return [('Email', {
-            # 'classes': ('collapse',),
+            'classes': ('collapse',),
             'fields': fields
         })]
 
