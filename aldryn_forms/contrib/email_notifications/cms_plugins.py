@@ -165,6 +165,8 @@ class EmailNotificationForm(FormPlugin):
             logger.exception("Could not send notification emails.")
             return []
 
+        # FIXME: my database is messed up, so i have to change the base class of the instance to make it work
+        instance.__class__ = EmailNotificationFormPlugin
         notifications = instance.email_notifications.select_related('form')
 
         emails = []
